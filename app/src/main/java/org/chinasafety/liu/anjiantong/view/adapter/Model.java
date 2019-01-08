@@ -1,3 +1,30 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:01f44a020d266d93a655f25435eb69e6f775dd819c986ddd7e05d8c1e58fb40d
-size 510
+package org.chinasafety.liu.anjiantong.view.adapter;
+
+import java.io.Serializable;
+
+/**
+ * Created by Administrator on 2018/12/26.
+ */
+
+
+public class Model {
+    private boolean ischeck;
+    private String st;
+
+    public boolean ischeck() {
+        return ischeck;
+    }
+
+    public void setIscheck(boolean ischeck) {
+        this.ischeck = ischeck;
+    }
+
+    public String getSt() {
+        return st;
+    }
+
+    public void setSt(String st) {
+        this.st = st;
+
+    }
+    }

@@ -1,3 +1,14 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:0fa3a564e6f620733d83e847fd3f06b6cf787ea8180ff272691ec70abbe10299
-size 482
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/item_title"/>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/company_list_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+</LinearLayout>

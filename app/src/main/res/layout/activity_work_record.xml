@@ -1,3 +1,13 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:11b1cfc02521bc5e4b9b5eb85f288678f1c65c7c1c196ffa6e77cb17d2a730c2
-size 642
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="org.chinasafety.liu.anjiantong.view.activity.WorkRecordActivity">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+</android.support.constraint.ConstraintLayout>

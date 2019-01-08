@@ -1,3 +1,3 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:acbfa76c14ce6c4269b9e91559c567d98d7d2999a73ecad07367892b791cc192
-size 169
+<?xml version="1.0" encoding="utf-8"?>
+<bitmap xmlns:android="http://schemas.android.com/apk/res/android" 
+	android:src="@drawable/bg_s" android:tileMode="repeat" />

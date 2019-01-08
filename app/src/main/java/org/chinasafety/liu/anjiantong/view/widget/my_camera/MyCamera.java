@@ -1,3 +1,252 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:3750ca7258f7e46020f05888612ec31bac63a1ed70f901c2fee765ff1aa4fa43
-size 8443
+package org.chinasafety.liu.anjiantong.view.widget.my_camera;
+
+import android.app.Activity;
+import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.PixelFormat;
+import android.hardware.Camera;
+import android.os.Bundle;
+import android.util.AttributeSet;
+import android.view.LayoutInflater;
+import android.view.Surface;
+import android.view.SurfaceHolder;
+import android.view.SurfaceView;
+import android.view.View;
+import android.widget.LinearLayout;
+import android.widget.Toast;
+
+import org.chinasafety.liu.anjiantong.R;
+import org.chinasafety.liu.anjiantong.utils.BitmapUtil;
+
+import java.util.ArrayList;
+
+import io.reactivex.Observable;
+import io.reactivex.ObservableEmitter;
+import io.reactivex.ObservableOnSubscribe;
+import io.reactivex.Observer;
+import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.disposables.Disposable;
+import io.reactivex.schedulers.Schedulers;
+
+
+/**
+ * Created by Administrator on 2016/5/4.
+ */
+public class MyCamera extends LinearLayout implements IYhdjImageCallBack {
+
+    private Context mContext;
+    private SurfaceView mSurfaceView;
+    private SurfaceCallback mSurfaceCallback;
+    private Camera mCamera;
+    private ArrayList<String> mImageData;
+    private Camera.Parameters mParameters;
+    //    private ImageView mTopImageView;
+    private ITakePhotoListener mTakePhotoListener;
+
+    public void setTakePhotoListener(ITakePhotoListener pTakePhotoListener) {
+        mTakePhotoListener = pTakePhotoListener;
+    }
+
+    public MyCamera(Context context) {
+        super(context);
+        init(context);
+    }
+
+    public MyCamera(Context context, AttributeSet attrs) {
+        super(context, attrs);
+        init(context);
+    }
+
+    public MyCamera(Context context, AttributeSet attrs, int defStyle) {
+        super(context, attrs, defStyle);
+        init(context);
+    }
+
+    private void init(Context context) {
+        mContext = context;
+        LayoutInflater.from(context).inflate(R.layout.my_camera, this, true);
+//        mTopImageView = (ImageView) findViewById(R.id.take_photo_iv);
+        mSurfaceView = (SurfaceView) findViewById(R.id.take_photo_surface);
+        mSurfaceView.getHolder()
+                .setType(SurfaceHolder.SURFACE_TYPE_PUSH_BUFFERS);
+        mSurfaceView.getHolder().setFixedSize(176, 144); //设置Surface分辨率
+        mSurfaceView.getHolder().setKeepScreenOn(true);// 屏幕常亮
+        mImageData = new ArrayList<String>();
+    }
+
+    public void setCameraCallback() {
+        if (mSurfaceView != null && mSurfaceView.getHolder() != null) {
+            mSurfaceCallback = new SurfaceCallback();
+            mSurfaceView.getHolder().addCallback(mSurfaceCallback);
+        }
+    }
+
+    @Override
+    public ArrayList<String> getImageDatas() {
+        return mImageData;
+    }
+
+    @Override
+    public void takePhoto() {
+        if (mImageData.size() == 3) {
+            Toast.makeText(mContext, R.string.take_photo_max_toast, Toast.LENGTH_SHORT).show();
+            return;
+        }
+//        if (mSurfaceView.getVisibility() == View.GONE) {
+//            mSurfaceView.setVisibility(View.VISIBLE);
+//            mTopImageView.setVisibility(View.GONE);
+//        } else {
+        mCamera.takePicture(null, null, new MyPictureCallback());
+//        }
+    }
+
+    @Override
+    public void success() {
+       /* mSurfaceView.setVisibility(View.VISIBLE);*/
+//        mTopImageView.setVisibility(View.GONE);
+        mImageData.clear();
+    }
+
+    @Override
+    public void releaseCamera() {
+        mSurfaceView.getHolder().removeCallback(mSurfaceCallback);
+        if (mCamera != null) {
+            mCamera.release();
+            mCamera = null;
+        }
+    }
+
+    private final class MyPictureCallback implements Camera.PictureCallback {
+
+        @Override
+        public void onPictureTaken(byte[] data, Camera camera) {
+            try {
+                Bundle bundle = new Bundle();
+                bundle.putByteArray("bytes", data); //将图片字节数据保存在bundle当中，实现数据交换
+                zipBitmap(data);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    public void zipBitmap(final byte[] data) {
+        Observable.create(new ObservableOnSubscribe<String>() {
+            @Override
+            public void subscribe(ObservableEmitter<String> e) throws Exception {
+                try {
+                    Bitmap bitmap = BitmapUtil.imageZoom(data);
+                    String path = BitmapUtil.saveToSDCard(bitmap);
+                    e.onNext(path);
+                } catch (Exception pE) {
+                    pE.printStackTrace();
+                    e.onError(pE);
+                }
+                e.onComplete();
+            }
+        }).observeOn(AndroidSchedulers.mainThread()).subscribeOn(Schedulers.io()).subscribe(new Observer<String>() {
+            @Override
+            public void onSubscribe(Disposable d) {
+
+            }
+
+            @Override
+            public void onNext(String value) {
+                getBitmap(value);
+            }
+
+            @Override
+            public void onError(Throwable e) {
+
+            }
+
+            @Override
+            public void onComplete() {
+
+            }
+        });
+
+
+
+
+
+    }
+
+
+    private void getBitmap(String imageData) {
+//        FinalBitmap.create(mContext).display(mTopImageView, imageData);
+        mImageData.add(imageData);
+//        mImagePath = imagePath;
+//        mTopImageView.setVisibility(View.VISIBLE);
+        mSurfaceView.setVisibility(View.GONE);
+        mSurfaceView.setVisibility(View.VISIBLE);
+        Toast.makeText(mContext, R.string.take_photo_success, Toast.LENGTH_SHORT).show();
+        if (mTakePhotoListener != null) {
+            mTakePhotoListener.getPhotoCount(mImageData.size());
+        }
+    }
+
+    private final class SurfaceCallback implements SurfaceHolder.Callback {
+
+        // 拍照状态变化时调用该方法
+        @Override
+        public void surfaceChanged(SurfaceHolder holder, int format, int width,
+                                   int height) {
+            if (mCamera == null) {
+                return;
+            }
+            mParameters = mCamera.getParameters(); // 获取各项参数
+            mParameters.setPictureFormat(PixelFormat.RGB_565); // 设置图片格式
+            mParameters.setPreviewSize(width, height); // 设置预览大小
+            mParameters.setPreviewFrameRate(5);  //设置每秒显示4帧
+            mParameters.setPictureSize(width, height); // 设置保存的图片尺寸
+            mParameters.setJpegQuality(80); // 设置照片质量
+        }
+
+        // 开始拍照时调用该方法
+        @Override
+        public void surfaceCreated(SurfaceHolder holder) {
+            try {
+                mCamera = Camera.open(); // 打开摄像头
+                mCamera.setPreviewDisplay(holder); // 设置用于显示拍照影像的SurfaceHolder对象
+                mCamera.setDisplayOrientation(getPreviewDegree((Activity) mContext));
+                mCamera.startPreview(); // 开始预览
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+
+        }
+
+        // 停止拍照时调用该方法
+        @Override
+        public void surfaceDestroyed(SurfaceHolder holder) {
+            if (mCamera != null) {
+                mCamera.release(); // 释放照相机
+                mCamera = null;
+            }
+        }
+    }
+
+    public static int getPreviewDegree(Activity activity) {
+        // 获得手机的方向
+        int rotation = activity.getWindowManager().getDefaultDisplay()
+                .getRotation();
+        int degree = 0;
+        // 根据手机的方向计算相机预览画面应该选择的角度
+        switch (rotation) {
+            case Surface.ROTATION_0:
+                degree = 90;
+                break;
+            case Surface.ROTATION_90:
+                degree = 0;
+                break;
+            case Surface.ROTATION_180:
+                degree = 270;
+                break;
+            case Surface.ROTATION_270:
+                degree = 180;
+                break;
+        }
+        return degree;
+    }
+}

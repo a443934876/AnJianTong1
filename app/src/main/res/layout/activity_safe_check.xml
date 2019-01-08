@@ -1,3 +1,15 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:cde4d884bf8bfe12c8542b474d4e2af904ebc052796d2c3f2f82661695da0b5b
-size 471
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include layout="@layout/item_title"/>
+
+
+    <FrameLayout
+        android:id="@+id/activity_safe_check_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+</LinearLayout>

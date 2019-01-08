@@ -1,3 +1,60 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:426e65b6bd12f6fcc34042132f88f5a080cbae8a79f1741097e2c209c841fcb1
-size 1955
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <org.chinasafety.liu.anjiantong.view.widget.my_camera.MyCamera
+        android:id="@+id/my_camera"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+
+
+
+    <RelativeLayout
+        android:layout_marginBottom="30dp"
+        android:id="@+id/ph"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true">
+
+        <ImageButton
+            android:id="@+id/xcpz_btn"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/photo_btn" />
+
+        <TextView
+            android:id="@+id/photo_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/icon_unread"
+            android:padding="2dp"
+            android:text="0"
+            android:textColor="@color/white"
+            android:textSize="12sp" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_marginBottom="30dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_toRightOf="@+id/ph"
+        android:paddingLeft="30dp">
+
+        <Button
+            android:id="@+id/btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="确定" />
+
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

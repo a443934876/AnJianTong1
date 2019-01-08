@@ -1,3 +1,21 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:7acbcd96c1292e870a117bc2e3c20845a687de9dc881f3e823ab8dd2656de7ba
-size 519
+package org.chinasafety.liu.anjiantong.view.adapter;
+
+import android.support.v7.widget.RecyclerView;
+import android.view.View;
+
+import java.util.List;
+
+import io.reactivex.subjects.PublishSubject;
+
+/**
+ * Created by cqj on 2017-05-22.
+ */
+public abstract class BaseHolder<T> extends RecyclerView.ViewHolder{
+
+
+    public BaseHolder(View itemView) {
+        super(itemView);
+    }
+
+    public abstract void bind(List<T> data, int position, IParamContainer container, PublishSubject<T> itemClick);
+}

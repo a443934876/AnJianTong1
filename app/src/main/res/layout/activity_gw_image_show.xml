@@ -1,3 +1,12 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:87d7f39ed5853a265745920e4d508c7b8437fa287e8c7ddf7011e173403de54d
-size 377
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+  >
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        />
+
+</LinearLayout>

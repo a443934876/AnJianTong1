@@ -1,3 +1,12 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:0f262ced2f6c7cd58f3765e014196dad0d05983c48180595d48c3cdd7144f052
-size 406
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:drawable="@color/mmmblue" android:state_pressed="true"/>
+
+    <item android:drawable="@color/mmmblue" android:state_checked="true"/>
+
+    <item android:drawable="@color/mmmblue" android:state_selected="true"/>
+
+    <item android:drawable="@color/white"/>
+
+</selector>

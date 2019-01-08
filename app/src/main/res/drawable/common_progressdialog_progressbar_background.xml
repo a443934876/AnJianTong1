@@ -1,3 +1,11 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:e6d2d38e4190d47651da66b992c4593f75aba11c84d722ae9e1ae570dbf24a4d
-size 394
+<?xml version="1.0" encoding="UTF-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@android:id/background"
+        android:drawable="@drawable/common_progress_dialog_progressbar2" />
+    <item
+        android:id="@android:id/progress"
+        android:drawable="@drawable/common_progress_dialog_progressbar3" />
+
+</layer-list>

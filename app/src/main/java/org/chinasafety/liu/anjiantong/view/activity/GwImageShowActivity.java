@@ -1,3 +1,39 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:4ab0f603f765a8591fa10a78857233b7f9166277b5e535a28ff8e848ee4f3a45
-size 1183
+package org.chinasafety.liu.anjiantong.view.activity;
+
+import android.app.Activity;
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageView;
+
+import com.bumptech.glide.Glide;
+
+import org.chinasafety.liu.anjiantong.R;
+
+public class GwImageShowActivity extends Activity implements View.OnClickListener{
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_gw_image_show);
+        ImageView imageView = (ImageView) findViewById(R.id.imageView);
+        Intent intent = getIntent();
+        String url = intent.getStringExtra("url");
+        Glide.with(this)
+                .load(url)
+                .placeholder(R.drawable.picture_load)
+                .error(R.drawable.picture_load)
+                .into(imageView);
+        imageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
+    }
+
+    @Override
+    public void onClick(View v) {
+        finish();
+    }
+}

@@ -1,3 +1,58 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:7713d041228dbf47b56fd013d9e50f1d155e1a1e8d442647f53c1d6302fb41f3
-size 1166
+package org.chinasafety.liu.anjiantong.model;
+
+/**
+ * Created by mini on 17/5/25.
+ */
+
+public class SearchCompanyInfo implements IChooseItem{
+
+    private String companyId;
+    private String companyName;
+    private String companyLocation;
+    private boolean isChoose;
+
+    public void setChoose(boolean choose) {
+        isChoose = choose;
+    }
+
+    public boolean isChoose() {
+        return isChoose;
+    }
+
+    public String getCompanyName() {
+        return companyName;
+    }
+
+    public String getCompanyId() {
+        return companyId;
+    }
+
+
+    public String getCompanyLocation() {
+        return companyLocation;
+    }
+
+    public void setCompanyName(String companyName) {
+        this.companyName = companyName;
+    }
+
+    public void setCompanyId(String companyId) {
+        this.companyId = companyId;
+    }
+
+    public void setCompanyLocation(String companyLocation) {
+        this.companyLocation = companyLocation;
+    }
+
+    @Override
+    public String getItemName() {
+        return companyName;
+    }
+
+    @Override
+    public String getItemId() {
+        return companyId;
+    }
+
+
+}

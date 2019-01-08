@@ -1,3 +1,11 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:93815af7238add75d57f019bc6223086bdac265c6e968ec0c9008190a25b781d
-size 214
+package org.chinasafety.liu.anjiantong.view.adapter;
+
+/**
+ * Created by cqj on 2017-05-22.
+ */
+public interface IParamContainer {
+
+    Object get(String key);
+
+    void set(String key, Object object);
+}

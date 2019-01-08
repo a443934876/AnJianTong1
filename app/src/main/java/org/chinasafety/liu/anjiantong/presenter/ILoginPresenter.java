@@ -1,3 +1,25 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:aae091bd8a66c9eb0e6a045ca1fbf14732b3d77fad2daea0e79c76e0a55ed974
-size 555
+package org.chinasafety.liu.anjiantong.presenter;
+
+import android.content.Context;
+
+import org.chinasafety.liu.anjiantong.model.CompanyInfo;
+
+import java.util.List;
+
+/**
+ * Created by mini on 17/5/21.
+ */
+
+public interface ILoginPresenter extends IBasePresenter {
+
+    void login(Context context, String account, String pwd);
+
+    interface IView extends IBasePresenter.IView {
+        void changeButtonStyle(boolean enable, String msg);
+
+        void toHomePage();
+
+        void toCompanyChoose(List<CompanyInfo> info);
+    }
+
+}

@@ -1,3 +1,15 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:f855766a40d65372b3dd7cac945d63fb31f1df9a65e674f277c9160d311722b5
-size 547
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_pressed="true">
+        <shape android:shape="rectangle">
+            <solid android:color="@color/red_btn_bg_pressed_color" />
+            <corners android:radius="6dp"/>
+        </shape>
+    </item>
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="@color/red_btn_bg_color" />
+            <corners android:radius="6dp"/>
+        </shape>
+    </item>
+</selector>

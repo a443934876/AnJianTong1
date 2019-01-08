@@ -1,3 +1,31 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:d836e698aa7b33fa63ff8e14482cba3018d9937af315cb0b5bae639bad508445
-size 1108
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="horizontal"
+              android:padding="16dp"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/commit_item_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/app_name"
+        android:textSize="18sp"/>
+
+    <TextView
+        android:id="@+id/commit_item_count_hint"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:text="条未提交"
+        android:textSize="18sp"/>
+
+    <TextView
+        android:id="@+id/commit_item_count"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toLeftOf="@id/commit_item_count_hint"
+        android:text="30"
+        android:textSize="18sp"/>
+
+</RelativeLayout>

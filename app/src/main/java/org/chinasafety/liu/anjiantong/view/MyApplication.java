@@ -1,3 +1,29 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:1b23fd74f4690cf3cccc4e365f867a8764db2e95153b7e2285f0663a4f755fec
-size 715
+package org.chinasafety.liu.anjiantong.view;
+
+import android.app.Application;
+
+import com.baidu.mapapi.SDKInitializer;
+
+import org.chinasafety.liu.anjiantong.view.widget.baidu_map_support.service.LocationService;
+
+
+public class MyApplication extends Application {
+
+    public LocationService locationService;
+    @Override
+    public void onCreate() {
+        super.onCreate();
+        /*
+          初始化定位sdk，建议在Application中创建
+         */
+        locationService = new LocationService(getApplicationContext());
+        SDKInitializer.initialize(getApplicationContext());
+
+    }
+
+
+    @Override
+    public void onTerminate() {
+        super.onTerminate();
+    }
+}

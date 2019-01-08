@@ -1,3 +1,23 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:19c395674a85886275e43defee6aa40c80b3b0a9e8e343e3879eed6f166719ff
-size 799
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <ProgressBar
+        android:visibility="invisible"
+        android:id="@+id/search_progressBar"
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/map_company_list_view"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/white" />
+
+</RelativeLayout>
+

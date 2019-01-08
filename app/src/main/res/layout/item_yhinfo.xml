@@ -1,3 +1,29 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:a7b7bfab3fb227f6082f61f2d3a66c1ecd41c2645555f998de722a0fa48aadac
-size 1032
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/blue_btn_bg_pressed_color"
+    android:orientation="vertical"
+    android:id="@+id/review_info_item_background"
+    android:padding="8dp">
+
+    <TextView
+        android:id="@+id/item_yhinfo_company_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:singleLine="true"
+        android:textColor="@color/white"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/item_yhinfo_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:singleLine="true"
+        android:textColor="@color/white"
+        android:layout_marginTop="4dp"
+        android:textSize="18sp" />
+
+</LinearLayout>

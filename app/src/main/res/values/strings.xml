@@ -1,3 +1,78 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:0db9aabb0a51c7782146d8b0cf3a1a4a0f8d5820004a32800ce6f53c4921d37c
-size 3884
+<resources>
+    <string name="app_name">慧为安监通</string>
+    <string name="home_page_company_name">福建为民安全生产咨询服务中心</string>
+    <string name="home_page_current_user_prefix">当前用户：</string>
+    <string name="home_page_message_unread_count">个信息未阅读</string>
+    <string name="home_page_class_un_study">个课程未学习</string>
+    <string name="home_page_policy_button">政策法规</string>
+    <string name="home_page_class_button">培训课程</string>
+    <string name="home_page_company_search_button">企业查询</string>
+    <string name="home_page_work_record_button">工作记录</string>
+    <string name="home_page_notification_button">通告信息</string>
+    <string name="home_page_safe_check_button">安全检查</string>
+    <string name="home_page_safe_review_button">安全复查</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="xlistview_header_hint_normal">下拉刷新</string>
+    <string name="xlistview_header_hint_ready">松开刷新数据</string>
+    <string name="xlistview_header_hint_loading">正在加载...</string>
+    <string name="xlistview_header_last_time">上次更新时间：</string>
+    <string name="xlistview_footer_hint_normal">查看更多</string>
+    <string name="xlistview_footer_hint_ready">松开载入更多</string>
+    <string name="dialog_default_title">提示</string>
+    <string name="dialog_ok">确定</string>
+    <string name="dialog_cancel">取消</string>
+    <string name="LOADING">请稍后。。。</string>
+    <string name="scan_text">将二维码放入框内, 即可自动扫描</string>
+    <string name="take_photo_success">拍照成功</string>
+    <string name="take_photo_failure">拍照失败</string>
+    <string name="yhdj_commit_hint">提交中...</string>
+    <string name="yhdj_zip_bitmap">图片处理中...</string>
+    <string name="ewm_failed">识别失败</string>
+    <string name="getyhdetail_failed">获取隐患详情失败!</string>
+    <string name="ewm_scanning">识别中...</string>
+    <string name="take_photo_max_toast">最多只能拍3张照片</string>
+    <string name="logout">退出登录</string>
+    <string name="emName">雇员姓名：</string>
+    <string name="xxx">XXX</string>
+    <string name="officePhone">办公电话：</string>
+    <string name="mobilePhone">移动电话：</string>
+    <string name="qqNumber">QQ号：</string>
+    <string name="emailAddress">电子邮件地址：</string>
+    <string name="tempPart">所在部门：</string>
+    <string name="tempDuty">职务：</string>
+    <string name="Emid">雇员ID：</string>
+    <string name="company_list">公司列表</string>
+    <string name="check">开始检查</string>
+    <string name="navi">到这去</string>
+    <string name="employee">联系人</string>
+    <string name="increase_success">增加一条隐患记录成功</string>
+    <string name="enterprise_name">企业名称</string>
+    <string name="enter_company_name">请输入公司名称</string>
+
+    <string-array name="yhjb">
+        <item>一般</item>
+        <item>较大</item>
+        <item>重大</item>
+        <item>特大</item>
+    </string-array>
+
+    <string-array name="sbzt">
+        <item>正常</item>
+        <item>待修</item>
+        <item>遗失</item>
+        <item>损毁</item>
+    </string-array>
+    <string-array name="sfxx">
+        <item>所有</item>
+        <item>已学习过</item>
+        <item>未学习过</item>
+        <item>未达规定学时</item>
+    </string-array>
+    <string-array name="sfkh">
+        <item>所有</item>
+        <item>已考核过</item>
+        <item>未考核过</item>
+        <item>未达60分及格线</item>
+    </string-array>
+</resources>

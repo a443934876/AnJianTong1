@@ -1,3 +1,20 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:d503ce275a2adf7e4b19710d0a7af3f3ff16378581a07766795c165ed67575a3
-size 416
+package org.chinasafety.liu.anjiantong.presenter;
+
+/**
+ * Created by mini on 17/5/24.
+ */
+
+public interface ICenterFragmentPresenter extends IBasePresenter{
+
+    void getUnReadMessageCount();
+
+    void getUnStudyClassCount();
+
+    interface IView extends IBasePresenter.IView
+    {
+        void setUnReadMessageCount(String count);
+
+        void setUnStydyClassCount(String classCount);
+    }
+
+}

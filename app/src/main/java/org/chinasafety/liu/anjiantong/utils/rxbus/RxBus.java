@@ -1,3 +1,30 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:f98676272831db468dc427c69fa41e5b4c214afb628a1e3e9e51571176e04240
-size 719
+package org.chinasafety.liu.anjiantong.utils.rxbus;
+
+import io.reactivex.Observable;
+import io.reactivex.subjects.PublishSubject;
+import io.reactivex.subjects.Subject;
+
+/**
+ * 作用：多线程事件传递
+ * Created by cqj on 2017-07-13.
+ */
+public class RxBus {
+
+    public static RxBus getInstance() {
+        return RxbusHolder.instance;
+    }
+
+    public static class RxbusHolder{
+        private static final RxBus instance = new RxBus();
+    }
+
+    private final Subject bus = PublishSubject.create().toSerialized();
+
+    public void send(Object obj){
+        bus.onNext(obj);
+    }
+
+    public <T> Observable<T> observer(Class<T> clazz){
+        return bus.ofType(clazz);
+    }
+}

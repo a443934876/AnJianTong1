@@ -1,3 +1,11 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:fba81639d0f768fcc02687498663b9225033691431ad047502e7dc135fe86747
-size 409
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- 本xml名：button_select.xml, 设置按钮按下去的效果，实际上就是不同的图片 -->
+    <item android:drawable="@drawable/btn_normal" android:state_pressed="false" />
+
+
+    <item android:drawable="@drawable/btn_pressed" android:state_pressed="true" />
+
+
+</selector>

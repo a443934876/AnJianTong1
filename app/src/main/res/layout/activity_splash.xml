@@ -1,3 +1,13 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:2e6e63c0f4f619c0e878bcdb7fccce43047bec3b3ea985ab48082f389f41838d
-size 454
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/activity_splash"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/splash_bg"/>
+
+</RelativeLayout>

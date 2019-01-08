@@ -1,3 +1,15 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:1a0d4b99908d15385876f569898542e067cb2f4e32c6313e1ec487b5b5993b4f
-size 436
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:orientation="vertical"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent">
+
+  <include layout="@layout/item_title"/>
+
+  <FrameLayout
+    android:id="@+id/cameraPreview"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+  />
+</LinearLayout>

@@ -1,3 +1,26 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:263aa7b6a5a56d9d5e66cdf66c3eea313679f742323078b789e0d07bd17c58a5
-size 706
+package org.chinasafety.liu.anjiantong.utils;
+
+import android.content.Context;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
+
+/**
+ * 项目名称：Anfutong1
+ * 创建时间：2017/12/14 20:25
+ * 注释说明：
+ */
+
+public class GetVersionUtil {
+    public static int getVersion(Context context) {
+        try {
+            PackageManager manager = context.getPackageManager();
+            PackageInfo info = manager.getPackageInfo(context.getPackageName(), 0);
+            int versionCode = info.versionCode;
+            return versionCode;
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return 0;
+    }
+}
+

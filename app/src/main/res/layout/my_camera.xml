@@ -1,3 +1,29 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:6c6d003d9e962b41b494828a213a9036eeccf511bdc7d48593d187889bdce67c
-size 983
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <SurfaceView
+            android:id="@+id/take_photo_surface"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"/>
+
+        <ImageView
+            android:id="@+id/take_photo_iv"
+            android:layout_width="250dp"
+            android:layout_height="250dp"
+            android:layout_centerInParent="true"
+            android:scaleType="fitCenter"
+            android:src="@drawable/default_pic"
+            android:visibility="gone"/>
+
+
+    </RelativeLayout>
+
+</LinearLayout>

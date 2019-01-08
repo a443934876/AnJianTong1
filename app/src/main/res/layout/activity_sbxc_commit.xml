@@ -1,3 +1,13 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:84b87b10ee1bb9e26c1243bc3ea70b449a0879da777ee392b68f40ebe3273659
-size 592
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.cqj.test.wbd2_gwpy.activity.SbxcCommitActivity">
+
+</RelativeLayout>

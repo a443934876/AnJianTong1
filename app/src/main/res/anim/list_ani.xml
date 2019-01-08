@@ -1,3 +1,5 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:d165a4637c741bf3fc9bfbe029d70908dc42be8f4f18c35c9eed1e680b7bccca
-size 224
+<?xml version="1.0" encoding="utf-8"?>
+<layoutAnimation xmlns:android="http://schemas.android.com/apk/res/android"
+    android:animation="@anim/push_right"
+    android:animationOrder="normal"
+    android:delay="0.5" />

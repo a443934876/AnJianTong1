@@ -1,3 +1,19 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:4e56c64eef9486fd7945eb466701f2f1b4ab9842f9ee2ab63b64fec8fd20b531
-size 343
+package org.chinasafety.liu.anjiantong.view.widget.my_camera;
+
+import java.util.ArrayList;
+
+/**
+ * Created by Administrator on 2016/4/23.
+ */
+public interface IYhdjImageCallBack {
+    ArrayList<String> getImageDatas();
+
+    void takePhoto();
+
+    void success();
+
+    void releaseCamera();
+
+    void setCameraCallback();
+
+}

@@ -1,3 +1,20 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:56bb5e697aab1c830db3b655f3453c0e0ffc8ef0364604b72b69956413a46f6d
-size 644
+<?xml version="1.0" encoding="utf-8"?>
+
+<set xmlns:android="http://schemas.android.com/apk/res/android"
+     xmlns:sweet="http://schemas.android.com/apk/res-auto"
+     android:interpolator="@android:anim/linear_interpolator"
+     android:shareInterpolator="true">
+
+    <alpha
+        android:fromAlpha="0"
+        android:toAlpha="1"
+        android:duration="400"/>
+
+    <sweet:org.chinasafety.liu.anjiantong.view.widget.sweet_dialog.Rotate3dAnimation
+        sweet:rollType="x"
+        sweet:fromDeg="100"
+        sweet:toDeg="0"
+        sweet:pivotX="50%"
+        sweet:pivotY="50%"
+        android:duration="400"/>
+</set>

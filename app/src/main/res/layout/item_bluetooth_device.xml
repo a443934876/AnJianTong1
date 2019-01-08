@@ -1,3 +1,28 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:a1bb87d992e3905c059efd08a6ec052f90b4190018d01a99ac1b68c5b9579c1b
-size 1032
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="48dp"
+    android:paddingLeft="@dimen/common_margin"
+    android:paddingRight="@dimen/common_margin">
+
+    <TextView
+        android:id="@+id/tv_device_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:text="蓝牙打印机"
+        android:textColor="@color/textColorPrimary"
+        android:textSize="14sp" />
+
+    <android.support.v7.widget.AppCompatCheckBox
+        android:id="@+id/cb_device"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:clickable="false"
+        android:focusable="false"
+        android:focusableInTouchMode="false"
+        android:textSize="14sp" />
+
+</RelativeLayout>

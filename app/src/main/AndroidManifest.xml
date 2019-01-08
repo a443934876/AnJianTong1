@@ -1,3 +1,171 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:fdbf2561c391d7b8d2b6ad90e648f38e22c7db66d8a6a32f69cde08c3b2a7c63
-size 8102
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="org.chinasafety.liu.anjiantong">
+
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <uses-permission android:name="android.permission.READ_LOGS" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.BODY_SENSORS" />
+    <uses-permission android:name="android.permission.BAIDU_LOCATION_SERVICE" />
+    <uses-permission android:name="android.permission.ACCES_MOCK_LOCATION" />
+    <uses-permission android:name="com.android.launcher.permission.READ_SETTINGS" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.ACCESS_GPS" />
+    <!-- SDK1.5需要android.permission.GET_TASKS权限判断本程序是否为当前运行的应用? -->
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.BROADCAST_STICKY" />
+    <!-- 来电消音 -->
+    <uses-permission android:name="android.permission.PROCESS_OUTGOING_CALLS" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+
+    <!-- 摄影机 -->
+    <application
+        android:name=".view.MyApplication"
+        android:allowBackup="true"
+        android:icon="@drawable/dargon108"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@android:style/Theme.Holo.Light.NoActionBar">
+        <service
+            android:name="com.baidu.location.f"
+            android:enabled="true"
+            android:process=":remote">
+            <intent-filter>
+                <action android:name="com.baidu.location.service_v2.2" />
+            </intent-filter>
+        </service>
+
+        <meta-data
+            android:name="com.baidu.lbsapi.API_KEY"
+            android:value="f4Did5gZzpiqD3z6CYBcXo91QV4FdLlz" />
+
+        <activity
+            android:name=".view.activity.SplashActivity"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".view.activity.LoginActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".view.activity.CompanyListActivity"
+            android:label="公司列表"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".view.activity.HomePageActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".view.activity.AudioRecordActivity"
+            android:label="录音"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".view.activity.CameraTestActivity"
+            android:label="二维码扫描"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".view.activity.JcbDetailActivity"
+            android:label="详情"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".view.widget.zxing.activity.MipcaActivityCapture"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".view.activity.SafeCheckActivity"
+            android:label="安全检查"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".view.activity.YhfcUploadActivity"
+            android:label="隐患复查"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".view.activity.ShowImageActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".view.activity.YhDetailActivity"
+            android:label="隐患详情"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".view.activity.SafeReviewActivity"
+            android:label="以下隐患已反馈未复查"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".view.activity.CompanySearchActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".view.activity.MapSelectActivity"
+            android:label="附近的服务对象"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize" />
+        <activity android:name=".view.activity.OneCompanyMapActivity" />
+        <activity
+            android:name=".view.activity.GwListActivity"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.DeviceDefault.Light.DarkActionBar" />
+        <activity
+            android:name=".view.activity.Gwpy_Activity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".view.activity.Gwsh_Activity"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.DeviceDefault.Light.DarkActionBar" />
+        <activity
+            android:name=".view.activity.GwSearch_Activity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".view.activity.WorkRecordActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".view.activity.PolicyActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".view.activity.StudyActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name=".view.activity.EmployeeActivity" />
+        <activity android:name=".view.widget.baidu_map_support.BNDemoGuideActivity" />
+
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="org.chinasafety.liu.anjiantong.fileProvider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+
+        <activity android:name=".view.activity.GwImageShowActivity">
+
+        </activity>
+        <activity android:name=".view.activity.CameraActivity" />
+        <activity
+            android:name=".view.activity.PrinterSettingActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+            android:screenOrientation="portrait" />
+
+
+        <service
+            android:name=".utils.DownloadIntentService"
+            android:exported="false" />
+    </application>
+
+</manifest>

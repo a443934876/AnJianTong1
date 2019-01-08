@@ -1,3 +1,5 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:b234516aab0dc63bec0a784bfdadb00c55b664095ab509afec121ca476b02875
-size 205
+<?xml version="1.0" encoding="utf-8"?>
+<set xmlns:android="http://schemas.android.com/apk/res/android">
+    <translate android:fromYDelta="100%p" android:toYDelta="0" android:duration="500"/>
+
+</set>

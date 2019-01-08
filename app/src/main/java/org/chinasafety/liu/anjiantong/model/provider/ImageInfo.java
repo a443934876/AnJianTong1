@@ -1,3 +1,40 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:3a0d674118edc375b5e715efbe9da69043cf51c5c5500fae4ba3f78b39151414
-size 766
+package org.chinasafety.liu.anjiantong.model.provider;
+
+import android.graphics.Bitmap;
+
+/**
+ * 项目名称：Anfutong1
+ * 创建时间：2018/1/17 17:41
+ * 注释说明：
+ */
+
+public    class ImageInfo   {
+    private String imagePath;
+    private Bitmap bitmap;
+    private String text;
+
+    public String getText() {
+        return text;
+    }
+
+    public void setText(String text) {
+        this.text = text;
+    }
+
+    public String getImagePath() {
+        return imagePath;
+    }
+
+    public void setImagePath(String imagePath) {
+        this.imagePath = imagePath;
+    }
+
+    public Bitmap getBitmap() {
+        return bitmap;
+    }
+
+    public void setBitmap(Bitmap bitmap) {
+        this.bitmap = bitmap;
+    }
+
+}

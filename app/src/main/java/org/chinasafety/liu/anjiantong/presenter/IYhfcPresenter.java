@@ -1,3 +1,28 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:6387e17f73b3b2df1d0aeb7dd023702555a48c039fd32c98aafc3fb6946c2dce
-size 669
+package org.chinasafety.liu.anjiantong.presenter;
+
+import android.content.Context;
+
+import org.chinasafety.liu.anjiantong.model.YhfcInfo;
+
+import java.util.List;
+
+/**
+ * Created by Administrator on 2016/5/4.
+ */
+public interface IYhfcPresenter {
+
+    void getYhfcList(String startDate, String endDate, String name);
+
+    interface View{
+        void getYhfcListSuccess(List<YhfcInfo> pYhfcInfoList);
+        void pendingDialog();
+        void cancelDialog();
+        void toast(String toast);
+        void toast(int toast);
+        Context getContext();
+        int getReview();
+        int getFinished();
+
+        boolean isYhzg();
+    }
+}

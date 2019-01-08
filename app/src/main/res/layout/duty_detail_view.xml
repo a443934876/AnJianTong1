@@ -1,3 +1,15 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:10f3727cef79f91f012a66c58ba03c3f1d98bcd2fbe86ced0326a14b9f1d9295
-size 515
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <org.chinasafety.liu.anjiantong.viewXListView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:cacheColorHint="#00000000"
+        android:divider="@null"
+        android:id="@+id/duty_list" />
+
+
+</LinearLayout>

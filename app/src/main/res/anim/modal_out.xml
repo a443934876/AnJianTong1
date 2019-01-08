@@ -1,3 +1,18 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:ad17ac90856deb2ea11e2e5c09c9392d8b9e64096b972489142fd7472111c0f2
-size 564
+<?xml version="1.0" encoding="utf-8"?>
+
+<set xmlns:android="http://schemas.android.com/apk/res/android"
+     android:interpolator="@android:anim/linear_interpolator"
+     android:shareInterpolator="true">
+    <scale
+        android:fromXScale="1"
+        android:toXScale="0.6"
+        android:fromYScale="1"
+        android:toYScale="0.6"
+        android:pivotX="50%"
+        android:pivotY="50%"
+        android:duration="150"/>
+   <!-- <alpha
+        android:fromAlpha="1"
+        android:toAlpha="0"
+        android:duration="150"/> -->
+</set>

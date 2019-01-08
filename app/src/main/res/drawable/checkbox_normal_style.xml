@@ -1,3 +1,7 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:7ceb460cf71197c81106f7946dd1e8d8d9dee6317e22a668b322743ba953ed6b
-size 319
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:drawable="@drawable/checkbox_locked_unchecked" android:state_checked="false"></item>
+    <item android:drawable="@drawable/checkbox_on" android:state_checked="true"></item>
+
+</selector>

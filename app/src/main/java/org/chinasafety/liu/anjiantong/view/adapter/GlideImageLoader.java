@@ -1,3 +1,34 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:b7bf019b8290522ea7b79b2c88352635d79c59a244c374fdc75ccff96cfc8d90
-size 988
+package org.chinasafety.liu.anjiantong.view.adapter;
+
+import android.content.Context;
+import android.net.Uri;
+import android.widget.ImageView;
+
+import com.bumptech.glide.Glide;
+import com.youth.banner.loader.ImageLoader;
+
+/**
+ * Created by Administrator on 2018/12/28.
+ */
+
+public class GlideImageLoader extends ImageLoader {
+    @Override
+    public void displayImage(Context context, Object path, ImageView imageView) {
+        /**
+         注意：
+         1.图片加载器由自己选择，这里不限制，只是提供几种使用方法
+         2.返回的图片路径为Object类型，由于不能确定你到底使用的那种图片加载器，
+         传输的到的是什么格式，那么这种就使用Object接收和返回，你只需要强转成你传输的类型就行，
+         切记不要胡乱强转！
+         */
+
+
+        //Glide 加载图片简单用法
+        Glide.with(context).load(path).into(imageView);
+
+
+    }
+
+
+
+}

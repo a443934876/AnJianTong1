@@ -1,3 +1,9 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:dad4c5a3d254a3ec43e681e2345b829327284e6bf9f20b0a16808710eeee1a5f
-size 199
+package org.chinasafety.liu.anjiantong.view.widget.my_camera;
+
+/**
+ * Created by Administrator on 2016/11/14.
+ */
+public interface ITakePhotoListener {
+
+    void getPhotoCount(int count);
+}
